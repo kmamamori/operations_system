@@ -2,11 +2,10 @@ import os, sys
 
 def main():
     while True:
+        p = os.getcwd()+' $' if 'PS1' not in os.environ else os.environ['PS1']
+        os.write(1, p.encode())
         input = os.read(0, 128)
-        print(input)
         input = input.decode()
-        print(input)
-        print("abc")
         if "exit" in input:
             print("Exiting")
             sys.exit(1)
