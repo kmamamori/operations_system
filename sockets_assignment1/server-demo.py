@@ -2,7 +2,7 @@
 from socket import *
 import time
 s = socket(AF_INET, SOCK_STREAM)
-s.bind(("localhost", 7069))
+s.bind(("127.0.0.1", 7069))
 s.listen(5)
 while True:
     c,a = s.accept()
@@ -11,5 +11,3 @@ while True:
     time.sleep(0.5)
     c.send(b"Hello again\n")
     c.close()
-
-

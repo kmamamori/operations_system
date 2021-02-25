@@ -2,7 +2,7 @@
 from socket import *
 import datetime, time, random
 s = socket(AF_INET, SOCK_STREAM)
-s.bind(("localhost", 7069))
+s.bind(("127.0.0.1", 7069))
 s.listen(5)
 while True:
     c,a = s.accept()
@@ -21,5 +21,3 @@ while True:
     toSendBytes = toSendString.encode()
     c.send(toSendBytes)
     c.close()
-
-
