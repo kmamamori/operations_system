@@ -1,0 +1,22 @@
+Part A: Write a program to connect to port 80 on nigelward.com; request the index.html file, and report the value of bytes 1012 through 1028.
+
+Part B: Python is only willing to send bytes via sockets, so if I want
+to send the number 256, for example, I have to do something on the
+server side, like str(256) + '\n' and then on the client side
+something like int(whatWasReceived).  Some people prefer to do
+(256).to_bytes(2, byteorder=big) on the server side, and on the
+client side do int.from_bytes(received, byteorder=big).  
+
+a) Modify server-demo.py and your client to see if you can really send numbers this way.  
+
+b) Show what happens if one side instead uses byteorder=small.
+
+c) Read the python sockets page description of htons() and ntons() and experiment with them to determine whether the machine you are using is big-endian or little-endian.
+
+Part C: Reimplement your chatbot from Assignment 1 as a client-server
+system.  The front end (the client) should interact with the user, the
+back end (the server) should handle the response logic, and the two
+should communicate via sockets, using protocol of your own design.
+
+Submit a report including all code, illustrative outputs, and your conclusion for B.
+
