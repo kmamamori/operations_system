@@ -7,7 +7,7 @@ s.connect(("127.0.0.1", 7069))
 while 1:
     data = s.recv(10000)
     #data = int.from_bytes(data, byteorder="big")
-    data = int.from_bytes(data, byteorder="litle")
+    data = int.from_bytes(data, byteorder="little")
     if data == 0:
         break
     print(data)
