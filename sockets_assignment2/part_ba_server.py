@@ -5,12 +5,7 @@ s = socket(AF_INET, SOCK_STREAM)
 s.bind(("127.0.0.1", 7069))
 s.listen(5)
 
-#data = s.send((256).to_bytes(2, byteorder = 'big'))
-
 while True:
     c,a = s.accept()
     data = c.send((256).to_bytes(2, byteorder = 'big'))
-#    c.send(b"Hello\n")
-#    time.sleep(0.5)
-#    c.send(b"Hello again\n")
     c.close()
