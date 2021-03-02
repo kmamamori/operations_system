@@ -16,5 +16,3 @@ print(data)
 #data = s.recv(16).decode()
 #print(data)
 s.close()
-
-#part B
