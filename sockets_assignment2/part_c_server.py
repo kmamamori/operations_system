@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from socket import *
-import time
 s = socket(AF_INET, SOCK_STREAM)
 s.bind(("127.0.0.1", 7069))
 s.listen(5)
@@ -40,15 +39,10 @@ while True:
         counter += 1
     elif counter == 4:
         data1 = data.split(',')
-        #print(data)
         msg = "%s awesome, but i hate %s too. Bye for now." % (data1[0].strip(), data1[-1].strip())
         c.send(msg.encode())
         counter += 1
     else:
         c.send(''.encode())
-#    c.send(b"Hello\n")
     data = c.recv(1000).decode()
-#    print(data)
-#    time.sleep(0.5)
-#    c.send(b"Hello again\n")
 c.close()

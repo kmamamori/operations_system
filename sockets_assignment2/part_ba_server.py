@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from socket import *
-import time
 s = socket(AF_INET, SOCK_STREAM)
 s.bind(("127.0.0.1", 7069))
 s.listen(5)
