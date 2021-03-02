@@ -8,7 +8,7 @@ while 1:
     data = s.recv(10000)
 #    data = int.from_bytes(data, byteorder="little")
     #data = int.from_bytes(data, byteorder="big")
-    print(data)
     if data == 0:
         break
+    print(data)
 s.close()

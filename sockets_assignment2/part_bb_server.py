@@ -9,6 +9,6 @@ s.listen(5)
 
 while True:
     c,a = s.accept()
-    data = c.send((256).to_bytes(2, byteorder = 'big'))
+    data = c.send((256).to_bytes(2, byteorder = 'little'))
     #data = c.send((256).to_bytes(2, byteorder = 'small'))
     c.close()
