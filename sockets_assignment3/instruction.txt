@@ -1,0 +1,14 @@
+Sockets 3 : Find a partner.  Working together, test their chatbot
+client with your chatbot server.  If it doesn't work, document the
+problem and fix it. It it does work, test their server with your
+client, and document and fix any problems.  Together write a report,
+including a description of the main problem and how you fixed it, plus
+evidence that in the end you got the client and server to work together.  
+
+If this is not exactly possible (perhaps your partner didn't get their code
+running, or you and your partner used the exact same protocol),
+instead do the assignment using one of the exemplar clients or servers
+provided above.
+
+(est 2 hours)
+
