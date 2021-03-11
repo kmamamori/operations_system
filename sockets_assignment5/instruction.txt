@@ -1,0 +1,1 @@
+Sockets 5: Extend your chatbot server so that it can handle multiple simultaneous conversations at once, by spawning a new thread for every client. (est 3 hours) 
