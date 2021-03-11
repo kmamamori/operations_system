@@ -1,0 +1,18 @@
+Sockets 4: Improve your chatbot client so that it reports response delays.
+For example,
+ client: you entered: I am a CS major
+ client: sent to server at 11:01:22
+ client: at 11:01:23 waiting for response, 1 second has elapsed
+ client: at 11:01:24 waiting for response, 2 seconds have elapsed
+ client: at 11:01:25 waiting for response, 3 seconds have elapsed
+ client: server replied at 11:01:25: excellent, I love CS majors
+
+First prepare your testbed. Simulate network delays by adding
+to your server the line
+   time.sleep(int(4*random.random()))
+before every send.  Do not otherwise change your server.  Now
+modify your client so that it reports delays.  Submit a report
+with the code for both pieces and sample output showing that
+your client does fine for both high-delay and low-delay responses.
+Hint: consider using a non-blocking socket.  (est 1 hour)
+
