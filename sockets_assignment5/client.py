@@ -2,6 +2,7 @@
 from socket import *
 s = socket(AF_INET, SOCK_STREAM)
 s.connect(("127.0.0.1", 7069))
+print("Connected to the server.\n\thandling communication with", s.getsockname())
 while 1:
     data = s.recv(10000)
     print(data.decode())
