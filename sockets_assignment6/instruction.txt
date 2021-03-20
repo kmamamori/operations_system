@@ -1,0 +1,11 @@
+
+
+threadedServer.py is a multithreaded server that can handle
+multiple clients at once, keeping a cumulative count of per-thread
+responses and total responses.  Unfortunately sometimes the total
+response count gets messed up.  Diagnose the problem and fix it.  Do
+not change, move, or delete any existing lines of code; you may only
+add new code.  The only system calls you may add are those in the
+_thread or Threading modules.  In your report, include evidence that
+your modifications solve the problem. (est 1 hour)
+
