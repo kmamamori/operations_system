@@ -4,7 +4,7 @@ import datetime, time, random
 import _thread
 
 def clientHandler(clientSocket, address, threadNumber):
-    global cumulativeResponses
+    global cumulativeResponses, l
     myResponses = 0
     print("I'm a new thread, number %d" % threadNumber)
     print("  handling communications with " , address)
@@ -29,8 +29,8 @@ def clientHandler(clientSocket, address, threadNumber):
 ##### main #####
 nThreads = 0 
 global cumulativeResponses
-cumulativeResponses = 0
 l = _thread.allocate_lock()
+cumulativeResponses = 0
 s = socket(AF_INET, SOCK_STREAM)
 s.bind(("localhost", 7069))
 s.listen(5)
