@@ -1,0 +1,5 @@
+
+Work in pairs if possible.
+Run pump.py and observe what happens.  Why does the last line never print out?  Change the internal protocol to fix this.
+Time it with different buffer sizes.  Which is fastest?  Why?
+Think of a way to slightly simplify the code.  For example, you may delete some of the acquire/release lines, or you may move one of those lines, or you may replace some of the "while(count..."  loops with simple conditionals.  Now run it a few times and report on whether and how the behavior differ from that of the original code, in terms of both output and time spent.  If the new behavior is different, explain why.  If the new behavior is not different, explain why your new code is equivalent to the old code, or why the test cases you ran were inadequate to demonstrate the difference.
