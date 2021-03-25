@@ -3,7 +3,6 @@
 
 
 import sys, threading, time
-from threading import Condition
 
 global count, putIndex,  getIndex, cbuffer, bufLock
 
@@ -16,16 +15,19 @@ def pumpProducer():
       
 
 def putChar(character):
-    global count, putIndex, bufLock, charRemoved, charAdded
+    global count, putIndex, bufLock
     bufLock.acquire()
     while count >= bufsize:
-        charRemoved.wait()
+        print("waiting to send", end="")
+        print(count)
+        print(bufsize)
+        bufLock.release()
+        bufLock.acquire()
     count += 1
     cbuffer[putIndex] = character
     putIndex += 1
     if putIndex == bufsize:
         putIndex = 0
-    charAdded.notify()
     bufLock.release()
 
 
@@ -37,21 +39,24 @@ def pumpConsumer():
         print("")  # newline
 
 def getChar():
-    global count, getIndex, bufLock, charRemoved, charAdded
+    global count, getIndex, bufLock
     bufLock.acquire()
     while (count == 0):
-        charAdded.wait()
+        print("waiting to receive", end="")
+        print(count)
+        bufLock.release()
+        bufLock.acquire()
     count -= 1
     c = cbuffer[getIndex]
     getIndex += 1
     if (getIndex == bufsize):
         getIndex = 0
-    charRemoved.notify()
     bufLock.release()
-    return c
+    return c       
 
 
 ### main ###
+
 if len(sys.argv) != 2:
     print(len(sys.argv))
     print("usage: pump bufferSize")
@@ -61,8 +66,6 @@ bufsize = int(sys.argv[1])
 cbuffer = ['x'] * bufsize    # circular buffer; x means uninitialized
 count = putIndex = getIndex = 0
 bufLock = threading.Lock()
-charAdded = Condition(bufLock)
-charRemoved = Condition(bufLock)
 
 consumer = threading.Thread(target=pumpConsumer)
 consumer.start()
