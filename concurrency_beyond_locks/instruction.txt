@@ -1,0 +1,11 @@
+
+
+Time your fixed-up version of pump.py (or pump-fixed.py above) with a buffer sizes of 1 and 100.
+Now modify it to use semaphores, with release() and acquire(), or to use condition variables, with wait() and notify().
+Predict whether the new version will be faster --- specifically whether it will require less real time, less user time, and less system time --- and explain why.
+Time your new version.
+Were your predictions correct?  
+If not, how can you explain what the results?
+
+
+
