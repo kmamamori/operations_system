@@ -1,0 +1,2 @@
+Take some code that you have already written, for this class or some other class, and modify it so that it can deadlock.
+Submit a brief report with your code and evidence that it actually does deadlock.
