@@ -1,0 +1,16 @@
+
+Poking Around, Part 1
+Do this from your laptop or desktop; ideally with a wired connection.
+These commands may require installing cygwin or more cygwin commands.
+If you don't have a wired connection, try to investigate anyway.
+If you have a hotspot or some other situation, you can do this with a wired friend.
+In the worst case, just learn about these commands and write a 1-page report on them.
+a) What is your machine's MAC address?  Hint: getmac
+b) What is your machine's IP address?  Hint: ipconfig
+c1, c2) How many machines do you think will be listed in your desktop/laptop's
+IPv4 routing table? How many are there really?  Hint: netstat -r
+d) Can you reach all of the machines listed in your routing table?  Try
+pinging them.
+e1, e2) How many hops does it take to reach utep.edu from your desktop/laptop?
+Try tracert.  Is the path always the same?   
+
