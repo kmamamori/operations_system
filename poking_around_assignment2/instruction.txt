@@ -1,0 +1,6 @@
+What are the IP address for utep.edu, engineering.utep.edu, and cs.utep.edu?  Hint: nslookup
+If a packet comes to me from 67.192.28.19 should I be suspicious?  Why or why not?  Hint: nslookup
+Which domain is older, nigelward.com or freudenthal.net?  Hint: whois
+Who runs networking at UTEP?  Hint: whois
+How long can you confidently expect UTEP to remain at 129.108.0.145?  Hint: nslookup -type=soa
+The argument to ping can be either a domain name or an IP address.  For which of these does ping need to do a DNS lookup?
